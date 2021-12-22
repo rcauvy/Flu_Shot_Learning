@@ -29,7 +29,6 @@ The dataset includes approximately 26,707 survey responses relating to the H1N1 
 
 #### Opinion of Effectiveness vs Vaccine Recipients
 <img src="./images/viz3.png" width=90%>
-> Even balance of vaccinated and unvaccinated.
 
 ## Methods
 The project was started off with exploratory data analysis (EDA) to understand the relationship between each columns and the target variable. During the EDA phase, it was evident that some columns were missing responses and would need to be addressed.
