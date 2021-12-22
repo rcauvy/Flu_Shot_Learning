@@ -8,6 +8,8 @@ The contents of this repository detail an analysis of the Phase 3 project. This 
 
 ### Introduction:
 
+<img src="./images/hero_viz.jpg" width=90%>
+
 As the COVID-19 virus has spread throughout the world. Countries across the world are working to inoculate their populations and protect against future outbreaks. It is essential to know which populations are at risk of not receiving the vaccines. This information would help public health organizations optimally target their resources to informing and educating individuals about the immunizations.
 
 At this stage of the COVID-19 pandemic, new variants has led to a large number of 'break through' cases. Public health officials have stated the best defense against new strains is to get vaccinated and take the recommended booster shots to greatly decrease the risk of hospitalization.
@@ -25,32 +27,25 @@ The dataset includes approximately 26,707 survey responses relating to the H1N1 
 <img src="./images/viz1.png" width=90%>
 > Even balance of vaccinated and unvaccinated.
 
+#### Opinion of Effectiveness vs Vaccine Recipients
+<img src="./images/viz3.png" width=90%>
+> Even balance of vaccinated and unvaccinated.
+
 ## Methods
 The project was started off with exploratory data analysis (EDA) to understand the relationship between each columns and the target variable. During the EDA phase, it was evident that some columns were missing responses and would need to be addressed.
 
 Next, it become apparent that many columns were categorical and would need to be encoded. This was done through a chain process to use sci-kit learn's OneHotEncoder. 
 
-After this, we proceeded with one hot encoding the categorical columns "key", "mode" and "time_signature". The dataset was then ready to be split into training and testing sets and used to train our models. Our modelling process started with training a baseline dummy classifier model for comparison and continued with training/testing a Random Forest model, XGBoost model and a Logistic Regression model. We additionally used grid searches that optimized for the recall scores to tune the hyperparameters of these models.
+After encoding the categorical columns. The dataset was ready to be split into training and testing sets and used to train our models. 
 
-Due to a class imbalance problem, we additionally had to use SMOTENC on our data prior to training the models. The outliers in the data were also removed and the dataset as a whole was scaled prior to training and testing the Logistic regression models.
-
-
-- descriptive analysis
-- choices made
-- key relevant findings from exploritory data analysis for mod 1, will be more involved in future mod
-
-## Results
+The modelling process started with training a baseline dummy classifier model for comparison and continued with training/testing a Logistic Regression model, Decision Tree model, Random Forest model, and an XGBoost model. After initially fitting vanilla models. grid search was used to tune hyperparameter that optimized for the best accuracy scores. Accuracy was choosen as the metric to evaluate model performance because the target variable has a class balance, correctly identifying vaccinated and unvaccinated are equally important to the public health organization's efforts and because accuracy is the most interpretable. 
 
 
-
-
+## Results and Recommendations:
 
 #### Visual 2 Title
 <img src="./images/viz2.png" width=90%>
 > Here are the top features of each of the 4 models. Some of the features were consistent across all 4 models.
-
-
-## Recommendations:
 
 In the midst of a pandemic with mutanting and evolving strains, it is vital to keep global populations up to date with immunizations. In order for public health groups to most effectively vaccinate their communities, it is essential to know both what and what does not lead someone to get a seasonal shot.
 
@@ -75,7 +70,7 @@ Based off these findings Public Health Organizations can prioritize their messag
 This porject was limisted by the features of this dataset. All of the columns were discrete, categorical variables. I believe the logistic regression and tree based models would have performed much better are predicting vaccines if they had continuous data for some features.
 
 ### For further information
-Please review the narrative of our analysis in [our jupyter notebook](./index.ipynb) or review our [presentation](./SampleProjectSlides.pdf)
+Please review the narrative of the analysis in [this jupyter notebook](./Flu_Shot_Learning.ipynb) or review the [presentation](./Phase_3_Project.pdf)
 
 For any additional questions, please contact **rcauvy@gmail.com
 
@@ -87,7 +82,7 @@ For any additional questions, please contact **rcauvy@gmail.com
 
 ├── README.md               <- The top-level README for reviewers of this project
 ├── Flu_Shot_Learning.ipynb <- Narrative documentation of analysis in jupyter notebook
-├── phase3_presentation.pdf <- pdf version of project presentation
+├── Phase3_Project.pdf      <- pdf version of project presentation
 └── images                  <- Both sourced externally and generated from code
 └── data                    <- Externally sourced data
 
